@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shary/src/app/presentation/account/presentation/account_screen.dart';
 import 'package:shary/src/app/presentation/roomfinder/presentation/roomfinder_screen.dart';
 import 'package:shary/src/app/presentation/roomfinder_search/presentation/search_screen.dart';
 import 'package:shary/src/core/themes/appcolors.dart';
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
     RoomFinderScreen(),
     SearchScreen(),
     RoomFinderScreen(),
-    RoomFinderScreen(),
+    AccountScreen(),
   ];
 
   void _onItemTapped(int index) {

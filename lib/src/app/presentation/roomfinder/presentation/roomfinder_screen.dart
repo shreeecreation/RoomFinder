@@ -19,7 +19,6 @@ class RoomFinderScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
           ),
           SizedBox(
-            height: mediaHeight / 2,
             child: Column(
               children: [
                 SizedBox(
@@ -102,6 +101,7 @@ class RoomFinderScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         const Icon(Icons.circle, color: AppColors.goodMorning, size: 10),
+                                        const SizedBox(width: 5),
                                         Text("Available", style: AppStyles.text12Px.textGrey)
                                       ],
                                     ),

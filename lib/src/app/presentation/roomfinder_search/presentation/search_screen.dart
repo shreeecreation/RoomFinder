@@ -18,40 +18,39 @@ class SearchScreen extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
         ),
         SizedBox(
-            height: mediaHeight / 2,
             child: Column(children: [
-              SizedBox(
-                  width: mediaWidth,
-                  height: 100,
-                  child: Align(alignment: Alignment.bottomCenter, child: Text("Room Finder", style: AppStyles.text24Px.white))),
+          SizedBox(
+              width: mediaWidth,
+              height: 100,
+              child: Align(alignment: Alignment.bottomCenter, child: Text("Room Finder", style: AppStyles.text24Px.white))),
 
-              ///// Property Card //////
-              const SizedBox(height: 34),
-              findPlaceCard(context),
-              const SizedBox(height: 21),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(width: 20),
-                  Text("Locations", style: AppStyles.text18PxMedium),
-                ],
-              ),
+          ///// Property Card //////
+          const SizedBox(height: 34),
+          findPlaceCard(context),
+          const SizedBox(height: 21),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(width: 20),
+              Text("Locations", style: AppStyles.text18PxMedium),
+            ],
+          ),
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: SizedBox(
-                  child: GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 170, childAspectRatio: 1, crossAxisSpacing: 20, mainAxisSpacing: 20),
-                      itemCount: 5,
-                      itemBuilder: (BuildContext ctx, index) {
-                        return gridLocation();
-                      }),
-                ),
-              ),
-            ]))
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: SizedBox(
+              child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 170, childAspectRatio: 1, crossAxisSpacing: 20, mainAxisSpacing: 20),
+                  itemCount: 5,
+                  itemBuilder: (BuildContext ctx, index) {
+                    return gridLocation();
+                  }),
+            ),
+          ),
+        ]))
       ]),
     ));
   }
@@ -154,7 +153,9 @@ Widget findPlaceCard(BuildContext context) {
                 height: 40,
                 width: MediaQuery.of(context).size.width - 80,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      //TODO Searching logic Here
+                    },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.goodMorning, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3))),
                     child: const Text("Search Now", style: TextStyle(color: Colors.white, fontSize: 14)))),
